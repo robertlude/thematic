@@ -16,7 +16,8 @@ import Theme from './Theme'
 /// Component
 
 type ThemeContextType = {
-  theme: Theme
+  theme:    Theme
+  themeKey: string
 }
 
 const ThemeContext = createContext<ThemeContextType>({
@@ -24,6 +25,7 @@ const ThemeContext = createContext<ThemeContextType>({
     name: '',
     key:  '',
   }),
+  themeKey: '',
 })
 
 export const ThemeProvider = ({
@@ -38,7 +40,10 @@ export const ThemeProvider = ({
   }, [theme])
 
   return (
-    <ThemeContext.Provider value={{theme}}>
+    <ThemeContext.Provider value={{
+      theme,
+      themeKey: theme.key,
+    }}>
       {children}
     </ThemeContext.Provider>
   )
