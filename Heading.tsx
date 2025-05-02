@@ -1,3 +1,5 @@
+'use client'
+
 /// External Dependencies
 
 import { ReactNode } from 'react'
