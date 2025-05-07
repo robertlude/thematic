@@ -16,8 +16,7 @@ import Theme from './Theme'
 /// Component
 
 type ThemeContextType = {
-  theme:    Theme
-  themeKey: string
+  theme: Theme
 }
 
 const ThemeContext = createContext<ThemeContextType>({
@@ -25,28 +24,22 @@ const ThemeContext = createContext<ThemeContextType>({
     name: '',
     key:  '',
   }),
-  themeKey: '',
 })
 
-export const ThemeProvider = ({
+const ThemeProvider = ({
   children,
   theme,
 }: {
   children: ReactNode
   theme:    Theme
 }) => {
-  useEffect(() => {
-    document.body.className = theme.body
-  }, [theme])
-
   return (
-    <ThemeContext.Provider value={{
-      theme,
-      themeKey: theme.key,
-    }}>
+    <ThemeContext.Provider value={{theme}}>
       {children}
     </ThemeContext.Provider>
   )
 }
 
 export const useTheme = () => useContext(ThemeContext) 
+
+export default ThemeProvider
