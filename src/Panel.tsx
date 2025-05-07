@@ -2,7 +2,7 @@
 
 /// External Dependencies
 
-import {
+import React, {
   ReactNode,
   RefObject,
 } from 'react'
@@ -18,13 +18,18 @@ import { useTheme } from './ThemeProvider'
 export default function Panel({
   children,
   className = '',
+  ref,
 }: {
   children:   ReactNode
   className?: string
+  ref?:       RefObject<HTMLDivElement | null>
 }) {
   const { theme } = useTheme()
 
-  return <body className={`${theme.body} ${className}`}>
+  return <div
+    className={`${theme.panel} ${className}`}
+    ref      ={ref}
+  >
     {children}
-  </body>
+  </div>
 }

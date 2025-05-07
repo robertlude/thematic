@@ -2,13 +2,15 @@
 
 /// External Dependencies
 
-import { ReactNode } from 'react'
+import React, {
+  ReactNode,
+} from 'react'
 
 /// Internal Dependencies
 
 // Contexts
 
-import { useTheme } from '@/thematic/ThemeProvider'
+import { useTheme } from './ThemeProvider'
 
 /// Component
 

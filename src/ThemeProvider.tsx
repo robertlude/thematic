@@ -2,10 +2,9 @@
 
 /// External Dependencies
 
-import {
+import React, {
   createContext,
   useContext,
-  useEffect,
   ReactNode,
 } from 'react'
 

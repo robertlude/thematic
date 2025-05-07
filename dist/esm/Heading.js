@@ -1,0 +1,3 @@
+"use client";
+import e from"react";import{useTheme as a}from"./ThemeProvider.js";function t({children:t,className:r="",level:c=1}){const{theme:s}=a();switch(c){case 1:return e.createElement("h1",{className:`${s.h1} ${r}`},t);case 2:return e.createElement("h2",{className:`${s.h2} ${r}`},t);case 3:return e.createElement("h3",{className:`${s.h3} ${r}`},t);case 4:return e.createElement("h4",{className:`${s.h4} ${r}`},t);case 5:return e.createElement("h5",{className:`${s.h5} ${r}`},t);default:return e.createElement("h6",{className:`${s.h6} ${r}`},t)}}export{t as default};
+//# sourceMappingURL=Heading.js.map
