@@ -4,6 +4,7 @@ export default class Theme {
     readonly key: string;
     readonly custom: any;
     readonly body: string;
+    readonly button: string;
     readonly panel: string;
     get h1(): string;
     get h2(): string;
@@ -11,10 +12,11 @@ export default class Theme {
     get h4(): string;
     get h5(): string;
     get h6(): string;
-    constructor({ name, key, body, panel, header, custom, }: {
+    constructor({ name, key, body, button, panel, header, custom, }: {
         name: string;
         key: string;
         body?: string;
+        button?: string;
         panel?: string;
         header?: string | {
             common: string;

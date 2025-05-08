@@ -20,8 +20,9 @@ export default class Theme {
 
   readonly custom: any
 
-  readonly body:  string
-  readonly panel: string
+  readonly body:   string
+  readonly button: string
+  readonly panel:  string
 
   get h1() { return `${this._header.common} ${this._header.h1}` }
   get h2() { return `${this._header.common} ${this._header.h2}` }
@@ -37,8 +38,9 @@ export default class Theme {
       name,
       key,
 
-      body  = '',
-      panel = '',
+      body   = '',
+      button = '',
+      panel  = '',
 
       header = '',
 
@@ -47,8 +49,9 @@ export default class Theme {
       name: string
       key:  string
 
-      body?:  string
-      panel?: string
+      body?:   string
+      button?: string
+      panel?:  string
 
       header?: string | {
         common: string
@@ -66,8 +69,9 @@ export default class Theme {
     this.name = name
     this.key  = key
 
-    this.body  = body
-    this.panel = panel
+    this.body   = body
+    this.button = button
+    this.panel  = panel
 
     if (typeof header === 'string') {
       this._header = {
