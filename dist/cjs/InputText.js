@@ -1,0 +1,3 @@
+"use client";
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("react"),t=require("./ThemeProvider.js");function a(e){return e&&"object"==typeof e&&"default"in e?e:{default:e}}var r=a(e);exports.default=function({children:e,className:a="",onChange:s,ref:n,rows:u=1,value:l=""}){const{theme:c}=t.useTheme();return u>1?r.default.createElement("textarea",{className:`${c.input.text.className} ${a}`,onChange:s,ref:n,rows:u,style:c.input.text.style,value:l}):r.default.createElement("input",{className:`${c.input.text.className} ${a}`,onChange:s,ref:n,style:c.input.text.style,value:l})};
+//# sourceMappingURL=InputText.js.map

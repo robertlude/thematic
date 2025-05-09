@@ -44,6 +44,10 @@ export type Theme = {
   button: ThemeComponent
   link:   ThemeComponent
   panel:  ThemeComponent
+
+  input: {
+    text: ThemeComponent
+  }
   
   h1: ThemeComponent
   h2: ThemeComponent

@@ -1,7 +1,7 @@
 import React, { MouseEvent, ReactNode, RefObject } from 'react';
-export default function Button({ children, onClick, className, ref, }: {
+export default function Button({ children, className, onClick, ref, }: {
     children: ReactNode;
-    onClick: (event: MouseEvent) => void;
     className?: string;
+    onClick?: ((event: MouseEvent) => void) | undefined;
     ref?: RefObject<HTMLButtonElement> | undefined;
 }): React.JSX.Element;

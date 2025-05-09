@@ -18,6 +18,7 @@ export default {
     'src/Body.tsx',
     'src/Button.tsx',
     'src/Heading.tsx',
+    'src/InputText.tsx',
     'src/Link.tsx',
     'src/Panel.tsx',
     'src/ThemeProvider.tsx',

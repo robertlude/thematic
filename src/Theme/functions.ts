@@ -73,11 +73,13 @@ export function createTheme(
     link   = '',
     panel  = '',
 
+    input = {},
+
     header = '',
 
     componentTypes = undefined,
 
-    custom = {},
+    custom = undefined,
   }: {
     name: string
     key:  string
@@ -87,13 +89,17 @@ export function createTheme(
     link?:   ThemeComponentValue
     panel?:  ThemeComponentValue
 
+    input?: {
+      text?: ThemeComponentValue | undefined
+    }
+
     header?: ThemeHeadersValue
 
     componentTypes?: undefined |{
       Link?: ThemeComponentTypeDefinition
     }
 
-    custom?: Record<string, any>
+    custom?: any
   }
 ): Theme {
   return {
@@ -104,6 +110,10 @@ export function createTheme(
     button: createThemeComponent(button),
     link:   createThemeComponent(link),
     panel:  createThemeComponent(panel),
+
+    input: {
+      text: createThemeComponent(input?.text ?? ''),
+    },
 
     ...getHeaders(header),
 
