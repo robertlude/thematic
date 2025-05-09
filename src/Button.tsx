@@ -16,15 +16,15 @@ import { useTheme } from './ThemeProvider'
 
 export default function Button({
   children,
-  onClick,
 
   className = '',
+  onClick   = undefined,
   ref       = undefined,
 }: {
   children: ReactNode
-  onClick:  (event: MouseEvent) => void
 
   className?: string
+  onClick?:   ((event: MouseEvent) => void) | undefined
   ref?:       RefObject<HTMLButtonElement> | undefined
 }) {
   const { theme } = useTheme()
