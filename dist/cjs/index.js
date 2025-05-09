@@ -1,2 +1,2 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("./Theme.js"),r=require("./Body.js"),t=require("./Heading.js"),s=require("./Panel.js"),d=require("./ThemeProvider.js");exports.Theme=e.default,exports.Body=r.default,exports.Heading=t.default,exports.Panel=s.default,exports.ThemeProvider=d.default;
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("./Theme/functions.js"),r=require("./Body.js"),t=require("./Button.js"),s=require("./Heading.js"),u=require("./Panel.js"),o=require("./ThemeProvider.js");exports.createTheme=e.createTheme,exports.Body=r.default,exports.Button=t.default,exports.Heading=s.default,exports.Panel=u.default,exports.ThemeProvider=o.default;
 //# sourceMappingURL=index.js.map

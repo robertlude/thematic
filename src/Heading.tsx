@@ -12,6 +12,10 @@ import React, {
 
 import { useTheme } from './ThemeProvider'
 
+/// Types
+
+type HeadingTagValue = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+
 /// Component
 
 export default function Heading({
@@ -25,18 +29,24 @@ export default function Heading({
 }) {
   const { theme } = useTheme()
 
-  switch (level) {
-    case 1:
-      return <h1 className={`${theme.h1} ${className}`}>{children}</h1>
-    case 2:
-      return <h2 className={`${theme.h2} ${className}`}>{children}</h2>
-    case 3:
-      return <h3 className={`${theme.h3} ${className}`}>{children}</h3>
-    case 4:
-      return <h4 className={`${theme.h4} ${className}`}>{children}</h4>
-    case 5:
-      return <h5 className={`${theme.h5} ${className}`}>{children}</h5>
-    default:
-      return <h6 className={`${theme.h6} ${className}`}>{children}</h6>
+  if (typeof level !== 'number') {
+    throw new Error('Level must be a number')
   }
+
+  if (level < 1 || level > 6) {
+    throw new Error('Level must be between 1 and 6')
+  }
+
+  if (Math.floor(level) !== level) {
+    throw new Error('Level must be an integer')
+  }
+
+  const HeadingTag: HeadingTagValue = `h${level}` as HeadingTagValue
+
+  return <HeadingTag
+    className={`${theme[HeadingTag].className} ${className}`}
+    style    ={theme[HeadingTag].style}
+  >
+    {children}
+  </HeadingTag>
 }

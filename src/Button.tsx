@@ -25,8 +25,9 @@ export default function Button({
   const { theme } = useTheme()
 
   return <button
-    className={`${theme.button} ${className}`}
+    className={`${theme.button.className} ${className}`}
     onClick  ={onClick}
+    style    ={theme.button.style}
   >
     {children}
   </button>

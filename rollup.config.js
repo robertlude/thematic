@@ -12,12 +12,14 @@ import { terser }         from 'rollup-plugin-terser'
 
 export default {
   input: [
+    'src/index.ts',
+    'src/Theme/index.ts',
+
     'src/Body.tsx',
+    'src/Button.tsx',
     'src/Heading.tsx',
     'src/Panel.tsx',
-    'src/Theme.ts',
     'src/ThemeProvider.tsx',
-    'src/index.ts',
   ],
   output: [
     {

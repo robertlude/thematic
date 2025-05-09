@@ -27,8 +27,9 @@ export default function Panel({
   const { theme } = useTheme()
 
   return <div
-    className={`${theme.panel} ${className}`}
+    className={`${theme.panel.className} ${className}`}
     ref      ={ref}
+    style    ={theme.panel.style}
   >
     {children}
   </div>

@@ -10,7 +10,10 @@ import React, {
 
 /// Internal Dependencies
 
-import Theme from './Theme'
+import {
+  Theme,
+  createTheme,
+} from './Theme/index'
 
 /// Component
 
@@ -19,7 +22,7 @@ type ThemeContextType = {
 }
 
 const ThemeContext = createContext<ThemeContextType>({
-  theme: new Theme({
+  theme: createTheme({
     name: '',
     key:  '',
   }),

@@ -1,5 +1,7 @@
-export { default as Theme } from './Theme';
+export type * from './Theme/types';
+export * from './Theme/functions';
 export { default as Body } from './Body';
+export { default as Button } from './Button';
 export { default as Heading } from './Heading';
 export { default as Panel } from './Panel';
 export { default as ThemeProvider } from './ThemeProvider';

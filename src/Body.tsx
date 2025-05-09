@@ -23,7 +23,10 @@ export default function Panel({
 }) {
   const { theme } = useTheme()
 
-  return <body className={`${theme.body} ${className}`}>
+  return <body
+    className={`${theme.body.className} ${className}`}
+    style    ={theme.body.style}
+  >
     {children}
   </body>
 }

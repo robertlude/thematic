@@ -1,3 +1,3 @@
 "use client";
-import e from"react";import{useTheme as r}from"./ThemeProvider.js";function t({children:t,className:o=""}){const{theme:m}=r();return e.createElement("body",{className:`${m.body} ${o}`},t)}export{t as default};
+import e from"react";import{useTheme as t}from"./ThemeProvider.js";function r({children:r,className:o=""}){const{theme:s}=t();return e.createElement("body",{className:`${s.body.className} ${o}`,style:s.body.style},r)}export{r as default};
 //# sourceMappingURL=Body.js.map
