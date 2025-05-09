@@ -16,12 +16,14 @@ import { useTheme } from './ThemeProvider'
 
 export default function InputText({
   className = '',
+  disabled  = false,
   onChange  = undefined,
   ref       = undefined,
   rows      = 1,
   value     = '',
 }: {
   className?: string
+  disabled?:  boolean
   onChange?:  ((value: string) => void) | undefined
   ref?:       RefObject<any> | undefined
   rows?:      number
@@ -32,6 +34,7 @@ export default function InputText({
   if (rows > 1) {
     return <textarea
       className={`${theme.input.text.className} ${className}`}
+      disabled ={disabled}
       onChange ={event => onChange?.(event.target.value)}
       ref      ={ref}
       rows     ={rows}
@@ -42,6 +45,7 @@ export default function InputText({
 
   return <input
     className={`${theme.input.text.className} ${className}`}
+    disabled ={disabled}
     onChange ={event => onChange?.(event.target.value)}
     ref      ={ref}
     style    ={theme.input.text.style}
