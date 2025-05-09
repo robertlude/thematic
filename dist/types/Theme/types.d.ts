@@ -1,3 +1,4 @@
+import { ComponentType } from 'react';
 export type ThemeStyle = Record<string, any>;
 export type ThemeComponent = {
     className: string;
@@ -21,6 +22,8 @@ export type ThemeHeaders = {
     h5: ThemeComponent;
     h6: ThemeComponent;
 };
+export type ThemeComponentType = ComponentType<any> | string;
+export type ThemeComponentTypeDefinition = ThemeComponentType | undefined;
 export type Theme = {
     name: string;
     key: string;
@@ -34,4 +37,7 @@ export type Theme = {
     h5: ThemeComponent;
     h6: ThemeComponent;
     custom: any;
+    componentTypes: {
+        Link: ThemeComponentType;
+    };
 };

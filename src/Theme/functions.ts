@@ -3,6 +3,7 @@
 import type {
   Theme,
   ThemeComponent,
+  ThemeComponentTypeDefinition,
   ThemeComponentValue,
   ThemeHeaders,
   ThemeHeadersValue,
@@ -73,6 +74,8 @@ export function createTheme(
 
     header = '',
 
+    componentTypes = undefined,
+
     custom = {},
   }: {
     name: string
@@ -83,6 +86,10 @@ export function createTheme(
     panel?:  ThemeComponentValue
 
     header?: ThemeHeadersValue
+
+    componentTypes?: undefined |{
+      Link?: ThemeComponentTypeDefinition
+    }
 
     custom?: Record<string, any>
   }
@@ -96,6 +103,10 @@ export function createTheme(
     panel:  createThemeComponent(panel),
 
     ...getHeaders(header),
+
+    componentTypes: {
+      Link: componentTypes?.Link ?? 'a',
+    },
 
     custom,
   }

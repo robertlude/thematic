@@ -1,3 +1,7 @@
+/// External Dependencies
+
+import { ComponentType } from 'react'
+
 /// Types
 
 export type ThemeStyle = Record<string, any>
@@ -28,6 +32,10 @@ export type ThemeHeaders = {
   h6: ThemeComponent
 }
 
+export type ThemeComponentType = ComponentType<any> | string
+
+export type ThemeComponentTypeDefinition = ThemeComponentType | undefined
+
 export type Theme = {
   name: string
   key:  string
@@ -44,4 +52,8 @@ export type Theme = {
   h6: ThemeComponent
 
   custom: any
+
+  componentTypes: {
+    Link: ThemeComponentType
+  }
 }
