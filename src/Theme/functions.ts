@@ -70,6 +70,7 @@ export function createTheme(
 
     body   = '',
     button = '',
+    link   = '',
     panel  = '',
 
     header = '',
@@ -83,6 +84,7 @@ export function createTheme(
 
     body?:   ThemeComponentValue
     button?: ThemeComponentValue
+    link?:   ThemeComponentValue
     panel?:  ThemeComponentValue
 
     header?: ThemeHeadersValue
@@ -100,6 +102,7 @@ export function createTheme(
 
     body:   createThemeComponent(body),
     button: createThemeComponent(button),
+    link:   createThemeComponent(link),
     panel:  createThemeComponent(panel),
 
     ...getHeaders(header),

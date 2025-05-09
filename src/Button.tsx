@@ -3,8 +3,9 @@
 /// External Dependencies
 
 import React, {
-  ReactNode,
   MouseEvent,
+  ReactNode,
+  RefObject,
 } from 'react'
 
 /// Internal Dependencies
@@ -15,18 +16,23 @@ import { useTheme } from './ThemeProvider'
 
 export default function Button({
   children,
-  className = '',
   onClick,
+
+  className = '',
+  ref       = undefined,
 }: {
   children: ReactNode
+  onClick:  (event: MouseEvent) => void
+
   className?: string
-  onClick?: (event: MouseEvent) => void
+  ref?:       RefObject<HTMLButtonElement> | undefined
 }) {
   const { theme } = useTheme()
 
   return <button
-    className={`${theme.button.className} ${className}`}
+    className={`cursor-pointer ${theme.button.className} ${className}`}
     onClick  ={onClick}
+    ref      ={ref}
     style    ={theme.button.style}
   >
     {children}

@@ -1,9 +1,10 @@
 import type { Theme, ThemeComponentTypeDefinition, ThemeComponentValue, ThemeHeadersValue } from './types';
-export declare function createTheme({ name, key, body, button, panel, header, componentTypes, custom, }: {
+export declare function createTheme({ name, key, body, button, link, panel, header, componentTypes, custom, }: {
     name: string;
     key: string;
     body?: ThemeComponentValue;
     button?: ThemeComponentValue;
+    link?: ThemeComponentValue;
     panel?: ThemeComponentValue;
     header?: ThemeHeadersValue;
     componentTypes?: undefined | {

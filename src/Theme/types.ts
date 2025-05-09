@@ -42,6 +42,7 @@ export type Theme = {
 
   body:   ThemeComponent
   button: ThemeComponent
+  link:   ThemeComponent
   panel:  ThemeComponent
   
   h1: ThemeComponent

@@ -18,11 +18,11 @@ import { useTheme } from './ThemeProvider'
 export default function Panel({
   children,
   className = '',
-  ref,
+  ref       = undefined,
 }: {
   children:   ReactNode
   className?: string
-  ref?:       RefObject<HTMLDivElement | null>
+  ref?:       RefObject<HTMLDivElement> | undefined
 }) {
   const { theme } = useTheme()
 

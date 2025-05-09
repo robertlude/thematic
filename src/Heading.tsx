@@ -4,6 +4,7 @@
 
 import React, {
   ReactNode,
+  RefObject,
 } from 'react'
 
 /// Internal Dependencies
@@ -20,12 +21,16 @@ type HeadingTagValue = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 
 export default function Heading({
   children,
+
   className = '',
   level     = 1,
+  ref       = undefined,
 }: {
-  children:   ReactNode
+  children: ReactNode
+
   className?: string
   level?:     number
+  ref?:       RefObject<HTMLHeadingElement> | undefined
 }) {
   const { theme } = useTheme()
 
@@ -46,6 +51,7 @@ export default function Heading({
   return <HeadingTag
     className={`${theme[HeadingTag].className} ${className}`}
     style    ={theme[HeadingTag].style}
+    ref      ={ref}
   >
     {children}
   </HeadingTag>

@@ -1,6 +1,7 @@
-import React, { ReactNode } from 'react';
-export default function Link({ children, className, href, }: {
+import React, { ComponentType, ReactNode, RefObject } from 'react';
+export default function Link({ children, href, className, ref, }: {
     children: ReactNode;
-    className?: string;
     href: string;
+    className?: string;
+    ref?: RefObject<ComponentType<any>> | undefined;
 }): React.JSX.Element;
