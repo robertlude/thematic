@@ -22,7 +22,7 @@ export default function InputText({
   value     = '',
 }: {
   className?: string
-  onChange?:  ((event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void) | undefined
+  onChange?:  ((value: string) => void) | undefined
   ref?:       RefObject<any> | undefined
   rows?:      number
   value?:     string
@@ -32,7 +32,7 @@ export default function InputText({
   if (rows > 1) {
     return <textarea
       className={`${theme.input.text.className} ${className}`}
-      onChange ={onChange}
+      onChange ={event => onChange?.(event.target.value)}
       ref      ={ref}
       rows     ={rows}
       style    ={theme.input.text.style}
@@ -42,7 +42,7 @@ export default function InputText({
 
   return <input
     className={`${theme.input.text.className} ${className}`}
-    onChange ={onChange}
+    onChange ={event => onChange?.(event.target.value)}
     ref      ={ref}
     style    ={theme.input.text.style}
     value    ={value}

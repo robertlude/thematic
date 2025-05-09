@@ -24,14 +24,14 @@ export default function Button({
   children: ReactNode
 
   className?: string
-  onClick?:   ((event: MouseEvent) => void) | undefined
+  onClick?:   (() => void) | undefined
   ref?:       RefObject<HTMLButtonElement> | undefined
 }) {
   const { theme } = useTheme()
 
   return <button
     className={`cursor-pointer ${theme.button.className} ${className}`}
-    onClick  ={onClick}
+    onClick  ={() => onClick?.()}
     ref      ={ref}
     style    ={theme.button.style}
   >
