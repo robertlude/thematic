@@ -1,6 +1,5 @@
-import React, { ChangeEvent, ReactNode, RefObject } from 'react';
-export default function InputText({ children, className, onChange, ref, rows, value, }: {
-    children: ReactNode;
+import React, { ChangeEvent, RefObject } from 'react';
+export default function InputText({ className, onChange, ref, rows, value, }: {
     className?: string;
     onChange?: ((event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void) | undefined;
     ref?: RefObject<any> | undefined;

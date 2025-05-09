@@ -15,16 +15,12 @@ import { useTheme } from './ThemeProvider'
 /// Component
 
 export default function InputText({
-  children,
-
   className = '',
   onChange  = undefined,
   ref       = undefined,
   rows      = 1,
   value     = '',
 }: {
-  children: ReactNode
-
   className?: string
   onChange?:  ((event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void) | undefined
   ref?:       RefObject<any> | undefined
